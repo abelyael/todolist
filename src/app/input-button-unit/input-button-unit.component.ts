@@ -1,36 +1,20 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
   template: `
     <p>
-      hello world
-      {{ title }}
+      input-button-unit works!
+      The title is: {{ title }}
     </p>
   `,
   styleUrls: ['./input-button-unit.component.css']
 })
-export class InputButtonUnitComponent {
+export class InputButtonUnitComponent implements OnInit {
+  title = 'Hello World';
 
-  title = 'Hello everyone';
-
-  constructor() {
-    setTimeout(() => {
-      this.changeTitle  ('lalala');
-    }, 1000);
-    setTimeout(() => {
-      this.changeTitle('fun');
-    }, 2000);
-    this.changeTitle('My First Angular App')  ;
-  }
+  constructor() { }
 
   ngOnInit() {
-//    this.title = this.title + ' started '
   }
-
-  changeTitle(newTitle: string) {
-    this.title = newTitle;
-  }
-
-
 }
